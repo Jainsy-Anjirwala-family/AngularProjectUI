@@ -31,6 +31,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { DialogModule } from 'primeng/dialog';
 import { DividerModule } from 'primeng/divider';
 import { DockModule } from 'primeng/dock';
+import { DragDropModule } from 'primeng/dragdrop';
 import { DropdownModule } from 'primeng/dropdown';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { EditorModule } from 'primeng/editor';
@@ -132,6 +133,7 @@ import { MessageService } from 'primeng/api';
     DialogModule,
     DividerModule,
     DockModule,
+    DragDropModule,
     DropdownModule,
     DynamicDialogModule,
     EditorModule,
