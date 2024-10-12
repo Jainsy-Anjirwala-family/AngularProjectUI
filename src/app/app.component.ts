@@ -212,7 +212,7 @@ export class AppComponent implements OnInit {
 
   validationData(){
     let flag = false;
-    flag = this.dataDetails.length > 0  && this.dataDetails.filter((el:any)=> !el.name || el.name !== "" || !el.hobbies || el.hobbies !== "" || !el.number || el.number !== "" ).length > 0 ? false : this.dataDetails.length > 0  && this.dataDetails.filter((el:any)=> el.number && el.number.toString().length === 10 ).length > 0 ? true : false;
+    flag = this.dataDetails.length > 0  && this.dataDetails.filter((el:any)=> !el.name || el.name === "" || !el.hobbies || el.hobbies === "" || !el.number || el.number === "" ).length > 0 ? false : this.dataDetails.length > 0  && this.dataDetails.filter((el:any)=> el.number && el.number.toString().length === 10 ).length > 0 ? true : false;
     return flag;
   }
 }
