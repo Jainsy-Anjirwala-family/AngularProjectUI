@@ -44,7 +44,12 @@ export class AppComponent implements OnInit {
   emitdata(event:any){
       console.log("🚀 ~ AppComponent ~ emitdata ~ event:", event)
       if(event && event.eventType && event.eventType === "save"){
-        this.fetchData('Save');
+        if(this.validationData()){
+          this.fetchData('Save');
+        }
+        else{        
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please Enter Valid Input' });
+        }
       }
       else if(event && event.eventType && event.eventType === "add"){
         this.fetchData('Add');
@@ -203,5 +208,11 @@ export class AppComponent implements OnInit {
       }
   });
 
+  }
+
+  validationData(){
+    let flag = false;
+    flag = this.dataDetails.length > 0  && this.dataDetails.filter((el:any)=> !el.name || el.name !== "" || !el.hobbies || el.hobbies !== "" || !el.number || el.number !== "" ).length > 0 ? false : this.dataDetails.length > 0  && this.dataDetails.filter((el:any)=> el.number && el.number.toString().length === 10 ).length > 0 ? true : false;
+    return flag;
   }
 }
